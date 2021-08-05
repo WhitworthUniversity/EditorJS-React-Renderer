@@ -32,6 +32,7 @@ import WarningOutput from './renderers/warning/index.jsx';
 import TableOutput from './renderers/table/index.jsx';
 import DelimiterOutput from './renderers/delimiter/index.jsx';
 import CodeBoxOutput from './renderers/codeBox/index.jsx';
+import UrlImageOutput from './renderers/urlImage/index.jsx';
 //#endregion
 
 const Output = ({ data, style, classNames, config, renderers }) => {
@@ -84,6 +85,9 @@ const Output = ({ data, style, classNames, config, renderers }) => {
       case 'delimiter':
         Renderer = renderers.delimiter || DelimiterOutput;
         return <Renderer key={ i } style={ style.delimiter || {}} config={ config.delimiter || {}} classNames={ classNames.delimiter || {}} />;
+      case 'urlImage':
+        Renderer = renderers.UrlImageOutput || UrlImageOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.urlImage || {}} config={ config.urlImage || {}} classNames={ classNames.urlImage || {}} />;
 
       default: return '';
     }
@@ -92,5 +96,5 @@ const Output = ({ data, style, classNames, config, renderers }) => {
 
 export {
   HeaderOutput, ParagraphOutput, ImageOutput, VideoOutput, EmbedOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput,
-  ChecklistOutput, WarningOutput, DelimiterOutput, Output as default
+  ChecklistOutput, WarningOutput, DelimiterOutput, Output, UrlImageOutput as default
 };
