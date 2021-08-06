@@ -10,7 +10,7 @@ import imageOutputStyle from './style';
 
 const supportedKeys = [ 'img', 'figure', 'figcaption'];
 
-const ImageOutput = ({ data, style, classNames, config }) => {
+const UrlImageOutput = ({ data, style, classNames, config }) => {
   if (!data || !data.url) return '';
   if (!style || typeof style !== 'object') style = {};
   if (!config || typeof config !== 'object') config = {};

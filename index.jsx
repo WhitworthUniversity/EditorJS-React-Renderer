@@ -85,7 +85,7 @@ const Output = ({ data, style, classNames, config, renderers }) => {
       case 'delimiter':
         Renderer = renderers.delimiter || DelimiterOutput;
         return <Renderer key={ i } style={ style.delimiter || {}} config={ config.delimiter || {}} classNames={ classNames.delimiter || {}} />;
-      case 'urlImage':
+      case 'urlimage':
         Renderer = renderers.UrlImageOutput || UrlImageOutput;
         return <Renderer key={ i } data={ block.data } style={ style.urlImage || {}} config={ config.urlImage || {}} classNames={ classNames.urlImage || {}} />;
 
@@ -96,5 +96,5 @@ const Output = ({ data, style, classNames, config, renderers }) => {
 
 export {
   HeaderOutput, ParagraphOutput, ImageOutput, VideoOutput, EmbedOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput,
-  ChecklistOutput, WarningOutput, DelimiterOutput, Output, UrlImageOutput as default
+  ChecklistOutput, WarningOutput, DelimiterOutput, UrlImageOutput, Output as default
 };
